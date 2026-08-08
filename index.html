@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SiteReel Media — social content for trade businesses</title>
-<meta name="description" content="One visit a week to your site or factory. We shoot it, cut it, caption it and post it. Social content for trade and home improvement businesses in Queensland and Victoria.">
+<meta name="description" content="Done-for-you social content for trade and home improvement businesses. One visit a week to your site or factory; we handle everything after that. Queensland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 }
 
 *{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-top:74px; }
 @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
 body{
@@ -58,42 +58,45 @@ a{ color:inherit; }
   margin:0 0 14px;
 }
 
-h1,h2,h3{ font-family:var(--display); font-weight:800; letter-spacing:-.025em; line-height:1.02; margin:0; }
+h1,h2,h3{ font-family:var(--display); font-weight:800; letter-spacing:-.025em; line-height:1.03; margin:0; }
 h1{ font-size:clamp(38px, 5.6vw, 72px); }
-h2{ font-size:clamp(30px, 4.4vw, 52px); }
-h3{ font-size:20px; font-weight:600; letter-spacing:-.01em; }
+h2{ font-size:clamp(28px, 4vw, 48px); }
+h3{ font-size:19px; font-weight:600; letter-spacing:-.01em; }
 p{ margin:0 0 1em; }
-.lede{ font-size:clamp(17px,2vw,21px); color:#C4D4E4; max-width:44ch; }
+.lede{ font-size:clamp(17px,2vw,21px); color:#C4D4E4; max-width:46ch; }
+
+/* draft banner */
+.draftbar{ background:var(--hivis); color:#231A00; font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-align:center; padding:9px 16px; }
 
 /* ---------- nav ---------- */
 .nav{
   position:sticky; top:0; z-index:50;
-  background:rgba(6,18,32,.82);
+  background:rgba(6,18,32,.86);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
 .nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; gap:24px; }
 .brand{ display:flex; align-items:center; gap:9px; font-family:var(--display); font-weight:800; letter-spacing:-.02em; font-size:18px; text-decoration:none; }
 .brand .mark{ width:15px; height:22px; border-radius:2px; background:linear-gradient(170deg,var(--blue),var(--sky)); box-shadow:0 0 0 3px rgba(28,111,224,.16); }
-.nav ul{ display:flex; gap:28px; list-style:none; margin:0; padding:0; font-size:14.5px; }
+.nav ul{ display:flex; gap:26px; list-style:none; margin:0; padding:0; font-size:14.5px; }
 .nav a{ text-decoration:none; color:#B6C8DA; }
 .nav a:hover{ color:#fff; }
-@media (max-width:760px){ .nav ul{ display:none; } }
+@media (max-width:1000px){ .nav ul{ display:none; } }
 
 .btn{
   display:inline-block; font-family:var(--body); font-weight:600; font-size:15px;
   padding:12px 22px; border-radius:3px; text-decoration:none;
   background:var(--blue); color:#fff; border:1px solid var(--blue);
-  transition:background .15s ease, transform .15s ease;
+  transition:background .15s ease, transform .15s ease; cursor:pointer;
 }
 .btn:hover{ background:var(--blue-dk); }
 .btn:active{ transform:translateY(1px); }
 .btn.ghost{ background:transparent; color:var(--paper); border-color:var(--line); }
 .btn.ghost:hover{ background:#0D2439; }
-a:focus-visible, button:focus-visible{ outline:2px solid var(--sky); outline-offset:3px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible{ outline:2px solid var(--sky); outline-offset:3px; }
 
 /* ---------- hero ---------- */
-.hero{ padding:clamp(56px,9vw,110px) 0 clamp(48px,7vw,88px); position:relative; overflow:hidden; }
+.hero{ padding:clamp(52px,8vw,100px) 0 clamp(44px,6vw,80px); position:relative; overflow:hidden; }
 .hero::after{ /* faint blueprint grid */
   content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
   background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
@@ -105,13 +108,13 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--sky); outline-off
 @media (max-width:980px){ .hero .wrap{ grid-template-columns:1fr; } }
 
 h1 .em{ color:var(--sky); display:block; }
-.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
-.hero-note{ font-family:var(--mono); font-size:12.5px; color:var(--mute); margin-top:22px; }
+.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+.hero-note{ font-family:var(--mono); font-size:12.5px; color:var(--mute); margin-top:20px; }
 
 /* filmstrip — the signature: what the client actually buys is vertical frames */
 .strip{ display:flex; gap:12px; }
 .frame{
-  position:relative; width:clamp(96px,13vw,138px); aspect-ratio:9/16;
+  position:relative; width:clamp(92px,12.5vw,132px); aspect-ratio:9/16;
   border:1px solid var(--line); border-radius:4px; overflow:hidden;
   background:
     repeating-linear-gradient(135deg, rgba(134,186,247,.05) 0 6px, transparent 6px 12px),
@@ -134,8 +137,16 @@ h1 .em{ color:var(--sky); display:block; }
 .frame.live .num{ background:var(--hivis); }
 
 /* ---------- section ---------- */
-.sec{ padding:clamp(56px,8vw,104px) 0; border-top:1px solid var(--line); }
-.sec-head{ max-width:56ch; margin-bottom:clamp(32px,4vw,56px); }
+.sec{ padding:clamp(52px,7vw,96px) 0; border-top:1px solid var(--line); }
+.sec-head{ max-width:58ch; margin-bottom:clamp(30px,4vw,52px); }
+
+/* ---------- why / stats ---------- */
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+@media (max-width:860px){ .stats{ grid-template-columns:repeat(2,1fr); } }
+.stats div{ background:var(--ink); padding:26px 22px; }
+.stats .n{ font-family:var(--display); font-weight:800; font-size:clamp(30px,3.6vw,42px); letter-spacing:-.03em; color:var(--sky); line-height:1; }
+.stats p{ margin:10px 0 0; font-size:14.5px; color:#A9BFD4; }
+.srcline{ font-family:var(--mono); font-size:11.5px; color:var(--dim); margin-top:14px; }
 
 /* ---------- the week (a real sequence, so it gets ordered markers) ---------- */
 .week{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.4vw,32px); }
@@ -158,7 +169,6 @@ h1 .em{ color:var(--sky); display:block; }
 @media (prefers-reduced-motion: reduce){ .step::before{ transition:none; } .step.in::before{ width:100%; } }
 
 /* ---------- included ---------- */
-/* 6 items — fixed columns so the grid always fills exactly, no empty cells */
 .inc{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
 @media (max-width:900px){ .inc{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px){ .inc{ grid-template-columns:1fr; } }
@@ -166,18 +176,13 @@ h1 .em{ color:var(--sky); display:block; }
 .inc h3{ margin-bottom:7px; font-size:17px; }
 .inc p{ margin:0; color:#A9BFD4; font-size:15px; }
 
-/* ---------- pricing ---------- */
-.tiers{ display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:clamp(16px,2vw,24px); align-items:start; }
-.tier{ border:1px solid var(--line); border-radius:5px; padding:clamp(24px,3vw,34px); background:linear-gradient(180deg,#08182A,var(--ink)); }
-.tier.feature{ border-color:var(--blue); box-shadow:0 0 0 1px rgba(28,111,224,.35), 0 24px 60px -30px rgba(28,111,224,.6); }
-.tier .name{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--sky); }
-.tier .price{ font-family:var(--display); font-weight:800; font-size:clamp(34px,4vw,46px); letter-spacing:-.03em; margin:10px 0 2px; }
-.tier .price span{ font-family:var(--body); font-weight:500; font-size:15px; color:var(--mute); letter-spacing:0; }
-.tier ul{ list-style:none; margin:22px 0 26px; padding:0; }
-.tier li{ padding:9px 0 9px 26px; border-top:1px solid var(--line); position:relative; font-size:15.5px; color:#C0D2E3; }
-.tier li::before{ content:""; position:absolute; left:2px; top:16px; width:9px; height:9px; border-radius:1px; background:var(--blue); }
-.tier.feature li::before{ background:var(--sky); }
-.tier .btn{ width:100%; text-align:center; }
+/* ---------- add-ons ---------- */
+.addons{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(16px,2vw,24px); }
+@media (max-width:760px){ .addons{ grid-template-columns:1fr; } }
+.addon{ border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:4px; padding:26px 26px; }
+.addon h3{ margin-bottom:8px; }
+.addon p{ margin:0; color:#B0C5D8; font-size:15.5px; }
+.addon .q{ font-family:var(--mono); font-size:11.5px; color:var(--hivis); text-transform:uppercase; letter-spacing:.12em; display:block; margin-bottom:12px; }
 
 /* ---------- founding band ---------- */
 .band{ border:1px solid var(--blue); border-radius:5px; padding:clamp(26px,4vw,44px); background:linear-gradient(120deg, rgba(28,111,224,.16), rgba(28,111,224,.03)); }
@@ -189,12 +194,53 @@ h1 .em{ color:var(--sky); display:block; }
 .slot.taken{ color:var(--dim); text-decoration:line-through; }
 .slot.open{ border-color:var(--hivis); color:var(--hivis); }
 
+/* ---------- faq ---------- */
+.faq{ border-top:1px solid var(--line); }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{ cursor:pointer; list-style:none; padding:22px 40px 22px 0; position:relative; font-family:var(--display); font-weight:600; font-size:18px; letter-spacing:-.01em; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:"+"; position:absolute; right:6px; top:19px; font-family:var(--mono); font-size:22px; color:var(--sky); line-height:1; }
+.faq details[open] summary::after{ content:"–"; }
+.faq .a{ padding:0 40px 24px 0; color:#B0C5D8; max-width:72ch; margin:0; }
+
+/* ---------- about ---------- */
+.about{ display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(28px,4vw,56px); align-items:start; }
+@media (max-width:860px){ .about{ grid-template-columns:1fr; } }
+.facts{ border:1px solid var(--line); border-radius:4px; padding:8px 22px; }
+.facts dl{ margin:0; }
+.facts div{ display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--line); }
+.facts div:last-child{ border-bottom:0; }
+.facts dt{ font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); }
+.facts dd{ margin:0; font-size:15px; text-align:right; }
+
 /* ---------- contact ---------- */
-.contact{ display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end; }
-@media (max-width:760px){ .contact{ grid-template-columns:1fr; align-items:start; } }
+.contact-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,4vw,56px); align-items:start; }
+@media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
+
+.form{ display:grid; gap:16px; border:1px solid var(--line); border-radius:6px; padding:clamp(22px,3vw,32px); background:linear-gradient(180deg,#08182A,var(--ink)); }
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:520px){ .form-row{ grid-template-columns:1fr; } }
+.field{ display:flex; flex-direction:column; gap:7px; }
+.field label{ font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); }
+.field label .req{ color:var(--hivis); }
+.field input, .field select, .field textarea{
+  font-family:var(--body); font-size:15px; color:var(--paper);
+  background:var(--ink-2); border:1px solid var(--line); border-radius:3px;
+  padding:11px 13px; width:100%;
+}
+.field textarea{ resize:vertical; min-height:96px; }
+.field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--blue); outline:none; }
+.field input::placeholder, .field textarea::placeholder{ color:var(--dim); }
+.form .btn{ margin-top:4px; }
+.form-note{ font-family:var(--mono); font-size:11.5px; color:var(--dim); margin:0; }
+.form-status{ font-family:var(--mono); font-size:12.5px; color:var(--sky); display:none; }
+.form-status.show{ display:block; }
+
+.chan-panel{ border:1px solid var(--line); border-radius:6px; padding:clamp(22px,3vw,32px); }
 .chan{ font-family:var(--mono); font-size:14px; color:var(--mute); }
 .chan a{ color:var(--sky); text-decoration:none; border-bottom:1px solid rgba(134,186,247,.35); }
 .chan a:hover{ color:#fff; }
+.chan-panel .lede{ max-width:none; }
 
 footer{ border-top:1px solid var(--line); padding:34px 0 46px; color:var(--mute); font-size:13.5px; }
 footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
@@ -207,13 +253,17 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
 </head>
 <body>
 
+<div class="draftbar">DRAFT — confirm contact details, ABN status and founding-spot count before this goes live.</div>
+
 <nav class="nav">
   <div class="wrap">
     <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>SiteReel Media</a>
     <ul>
+      <li><a href="#why">Why</a></li>
       <li><a href="#week">The week</a></li>
       <li><a href="#included">What you get</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
     <a class="btn" href="#contact">Book a shoot</a>
   </div>
@@ -222,7 +272,7 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow rise">Queensland &amp; Victoria</p>
+      <p class="eyebrow rise">Queensland</p>
       <h1 class="rise">Your best work<span class="em">never leaves the job site.</span></h1>
       <p class="lede rise" style="margin-top:24px">You finish a patio, a fit-out, a full production run — and the only people who ever see it are the ones who were standing there. We turn up once a week and fix that.</p>
       <div class="hero-cta rise">
@@ -231,8 +281,7 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
       </div>
       <p class="hero-note rise">One visit a week · 8–13 finished posts a month · You approve everything before it goes out</p>
     </div>
-
-    <div class="strip" aria-label="Examples of the vertical content produced each week">
+    <div class="strip" aria-label="The vertical content produced each week">
       <div class="frame rise"><span class="num">01</span><span class="tag">Factory floor</span></div>
       <div class="frame rise"><span class="num">02</span><span class="tag">Before / after</span></div>
       <div class="frame rise live"><span class="num">03</span><span class="tag">The team</span></div>
@@ -240,6 +289,23 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
     </div>
   </div>
 </header>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Why this matters</p>
+      <h2>Trade work is the most filmable thing there is. Almost nobody films it.</h2>
+      <p class="lede" style="margin-top:18px">Every job throws off before-and-afters, process footage and a finished result. Most trade businesses either post nothing, post from a phone whenever someone remembers, or pay a generalist agency built around cafés and clothing labels.</p>
+    </div>
+    <div class="stats">
+      <div><div class="n">90%</div><p>of local businesses use social media as part of their marketing</p></div>
+      <div><div class="n">83%</div><p>generate new leads directly from video content</p></div>
+      <div><div class="n">270%</div><p>increase in Google Business Profile clicks from local video</p></div>
+      <div><div class="n">49%</div><p>faster revenue growth associated with local video marketing</p></div>
+    </div>
+    <p class="srcline">Sources: Synup, 2026 Social Media Marketing Statistics · SellersCommerce, 2026 Video Marketing Statistics</p>
+  </div>
+</section>
 
 <section class="sec" id="week">
   <div class="wrap">
@@ -288,39 +354,32 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
   </div>
 </section>
 
-<section class="sec" id="pricing">
+<section class="sec">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Pricing</p>
       <h2>Flat monthly. Month to month.</h2>
-      <p class="lede" style="margin-top:18px">No ad spend markup, no hourly billing, no lock-in contract.</p>
+      <p class="lede" style="margin-top:18px">No ad spend markup, no hourly billing, no lock-in contract. Scope and rate are set per business — get in touch and we'll quote based on what you need shot and posted.</p>
     </div>
-    <div class="tiers">
-      <div class="tier">
-        <div class="name">Starter</div>
-        <div class="price">$2,200<span> /month</span></div>
-        <ul>
-          <li>Instagram</li>
-          <li>Weekly on-site shoot, up to 2 hours</li>
-          <li>2 posts a week — around 8 a month</li>
-          <li>Editing, captions and sound</li>
-          <li>We publish for you</li>
-          <li>Monthly performance summary</li>
-        </ul>
-        <a class="btn ghost" href="#contact">Start with Starter</a>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Add-ons</p>
+      <h2>Two things worth quoting separately.</h2>
+    </div>
+    <div class="addons">
+      <div class="addon">
+        <span class="q">Quoted per job</span>
+        <h3>Retailer content pack</h3>
+        <p>If stockists or retailers sell your product, we cut the same footage into packs branded for them to re-share. One shoot, re-shared across every store that carries you. It turns your social from a billboard into a distribution channel.</p>
       </div>
-      <div class="tier feature">
-        <div class="name">Growth</div>
-        <div class="price">$2,800<span> /month</span></div>
-        <ul>
-          <li>Instagram, Facebook and TikTok</li>
-          <li>Weekly on-site shoot, up to 3 hours</li>
-          <li>3 posts a week — around 12–13 a month</li>
-          <li>Editing, captions and sound</li>
-          <li>We publish for you</li>
-          <li>Testimonial capture and a quarterly call</li>
-        </ul>
-        <a class="btn" href="#contact">Start with Growth</a>
+      <div class="addon">
+        <span class="q">Quoted per job</span>
+        <h3>Review drive</h3>
+        <p>A short campaign to your customers, retailers and staff to fill in the reviews you've never asked for. Cheap to run, compounds over time, and it's usually the first thing a homeowner checks.</p>
       </div>
     </div>
   </div>
@@ -343,20 +402,128 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
   </div>
 </section>
 
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Straight answers</p>
+      <h2>The questions everyone asks.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Why is this cheaper than an agency?</summary>
+        <p class="a">Because production is automated. You're not paying for an agency's billable hours, account managers or office. The shoot is real, the review is human — the editing pipeline just isn't done by hand at $150 an hour.</p>
+      </details>
+      <details>
+        <summary>Do you use AI?</summary>
+        <p class="a">Yes — for editing and first-draft captions. We shoot the footage ourselves and a human approves every post before it goes out. Nothing publishes unreviewed, and nothing gets invented about your business.</p>
+      </details>
+      <details>
+        <summary>Who owns the accounts?</summary>
+        <p class="a">You do. Always. We get access, not ownership. If we part ways you keep everything — accounts, content and the raw footage.</p>
+      </details>
+      <details>
+        <summary>What happens if you're unavailable?</summary>
+        <p class="a">Everything lives in your accounts and a shared folder you can reach without us. There's no hostage situation built into this.</p>
+      </details>
+      <details>
+        <summary>Can we cancel?</summary>
+        <p class="a">Month to month. Thirty days' notice, no exit fee, no minimum term.</p>
+      </details>
+      <details>
+        <summary>Can you use trending sounds?</summary>
+        <p class="a">Partly, and it's worth being straight about this up front. Trending audio on Instagram and TikTok can only be attached inside those apps — nothing posted through a scheduling tool can use it. So we deliver with licensed music by default, and if a specific trend is worth chasing, that post gets published natively instead. It takes about ten seconds.</p>
+      </details>
+      <details>
+        <summary>Do we need to be on TikTok?</summary>
+        <p class="a">Not necessarily — it's part of what we can shoot for if you want it, and most trade businesses have no account at all, which makes it the cheapest reach available to them.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">About</p>
+      <h2>One person, a camera, and a factory floor.</h2>
+    </div>
+    <div class="about">
+      <div>
+        <p>SiteReel Media is run by Carter Hammond. My background is in the home improvement industry — I know how a job site runs, how to stay out of the way, and what actually builds trust with a homeowner deciding between three quotes.</p>
+        <p>The pitch is simple. Agencies that serve trades usually don't understand trades, and the ones that do charge like they're running a department. I turn up in person every week, shoot the real thing, and run an automated production pipeline behind it so the price reflects the actual cost of doing the work.</p>
+        <p>I take a small number of clients deliberately. At two to three hours a week each, quality drops the moment the list gets long.</p>
+      </div>
+      <div class="facts">
+        <dl>
+          <div><dt>Based</dt><dd>Queensland</dd></div>
+          <div><dt>Serving</dt><dd>Queensland</dd></div>
+          <div><dt>Clients</dt><dd>Taking two founding clients</dd></div>
+          <div><dt>Shot on</dt><dd>DJI Osmo Pocket 4</dd></div>
+          <div><dt>Terms</dt><dd>Month to month</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="contact">
   <div class="wrap">
-    <div class="contact">
-      <div>
-        <p class="eyebrow">Get started</p>
-        <h2>Book the first shoot.</h2>
-        <p class="lede" style="margin-top:18px">Tell us what you build and where you're based. If it's a fit, the first shoot goes in the calendar that week and you'll see finished content within seven days.</p>
-      </div>
-      <div>
-        <a class="btn" href="mailto:REPLACE@sitereelmedia.com.au">Email us</a>
-        <p class="chan" style="margin-top:16px">
-          <a href="mailto:REPLACE@sitereelmedia.com.au">REPLACE@sitereelmedia.com.au</a><br>
-          <a href="tel:+61400000000">04XX XXX XXX</a>
+    <div class="sec-head">
+      <p class="eyebrow">Get started</p>
+      <h2>Book the first shoot.</h2>
+      <p class="lede" style="margin-top:18px">Tell us what you build and where you're based. If it's a fit, the first shoot goes in the calendar that week and you'll see finished content within seven days.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="form" id="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name">Name <span class="req">*</span></label>
+            <input id="cf-name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="cf-business">Business name <span class="req">*</span></label>
+            <input id="cf-business" name="business" type="text" placeholder="Trading name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-email">Email <span class="req">*</span></label>
+            <input id="cf-email" name="email" type="email" placeholder="you@business.com.au" required>
+          </div>
+          <div class="field">
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="04XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-trade">What do you build?</label>
+            <input id="cf-trade" name="trade" type="text" placeholder="Patios, decking, landscaping...">
+          </div>
+          <div class="field">
+            <label for="cf-location">Location <span class="req">*</span></label>
+            <select id="cf-location" name="location" required>
+              <option value="" disabled selected>Please select...</option>
+              <option value="QLD">Queensland</option>
+              <option value="Other">Other (waitlist)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" placeholder="A bit about the business and what you're after."></textarea>
+        </div>
+        <button class="btn" type="submit">Send enquiry</button>
+        <p class="form-status" id="cf-status">Opening your email client with these details — send from there to reach us.</p>
+        <p class="form-note">No spam, no mailing list. This opens a pre-filled email — nothing is stored on this page.</p>
+      </form>
+
+      <div class="chan-panel">
+        <p class="eyebrow">Or reach us directly</p>
+        <p class="chan">
+          <a href="mailto:sitereelmedia@gmail.com">sitereelmedia@gmail.com</a>
         </p>
+        <p class="lede" style="margin-top:18px;font-size:15px;color:#A9BFD4;">Prefer to talk it through first? Send an email and we'll set up a call — no discovery-call funnel, no sales script.</p>
       </div>
     </div>
   </div>
@@ -364,7 +531,7 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
 
 <footer>
   <div class="wrap">
-    <div>SiteReel Media — social content for trade businesses. Queensland &amp; Victoria.</div>
+    <div>SiteReel Media — social content for trade businesses. Queensland.</div>
     <div>ABN pending</div>
   </div>
 </footer>
@@ -378,6 +545,43 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
   document.querySelectorAll('.rise, .step').forEach(function(el, i){
     if(el.classList.contains('rise')) el.style.transitionDelay = (i * 55) + 'ms';
     io.observe(el);
+  });
+})();
+
+/* Static-site contact form: no backend yet, so this opens a pre-filled
+   mailto: with the enquiry. Swap for Formspree/Netlify Forms/etc. before
+   relying on this for real leads. */
+(function(){
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('cf-status');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(form);
+    var name = data.get('name') || '';
+    var business = data.get('business') || '';
+    var email = data.get('email') || '';
+    var phone = data.get('phone') || '';
+    var trade = data.get('trade') || '';
+    var location = data.get('location') || '';
+    var message = data.get('message') || '';
+
+    var subject = 'Enquiry from ' + business + ' (' + name + ')';
+    var body =
+      'Name: ' + name + '\n' +
+      'Business: ' + business + '\n' +
+      'Email: ' + email + '\n' +
+      'Phone: ' + phone + '\n' +
+      'What they build: ' + trade + '\n' +
+      'Location: ' + location + '\n\n' +
+      'Message:\n' + message;
+
+    var mailto = 'mailto:sitereelmedia@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+    status.classList.add('show');
   });
 })();
 </script>
