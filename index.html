@@ -249,6 +249,8 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
 .rise{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
 .rise.in{ opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce){ .rise{ opacity:1; transform:none; transition:none; } }
+.form-status.is-error{ color:#FFB4A8; }
+.btn:disabled{ opacity:.6; cursor:default; }
 </style>
 </head>
 <body>
@@ -474,7 +476,7 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
       <p class="lede" style="margin-top:18px">Tell us what you build and where you're based. If it's a fit, the first shoot goes in the calendar that week and you'll see finished content within seven days.</p>
     </div>
     <div class="contact-grid">
-      <form class="form" id="contact-form">
+      <form class="form" id="contact-form" action="https://formspree.io/f/mbgrdgkw" method="POST">
         <div class="form-row">
           <div class="field">
             <label for="cf-name">Name <span class="req">*</span></label>
@@ -514,8 +516,8 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
           <textarea id="cf-message" name="message" placeholder="A bit about the business and what you're after."></textarea>
         </div>
         <button class="btn" type="submit">Send enquiry</button>
-        <p class="form-status" id="cf-status">Opening your email client with these details — send from there to reach us.</p>
-        <p class="form-note">No spam, no mailing list. This opens a pre-filled email — nothing is stored on this page.</p>
+        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+        <p class="form-note">No spam, no mailing list. We reply to enquiries ourselves, usually same day.</p>
       </form>
 
       <div class="chan-panel">
@@ -549,40 +551,46 @@ footer .wrap{ display:flex; justify-content:space-between; gap:18px; flex-wrap:w
   });
 })();
 
-/* Static-site contact form: no backend yet, so this opens a pre-filled
-   mailto: with the enquiry. Swap for Formspree/Netlify Forms/etc. before
-   relying on this for real leads. */
+/* Contact form -> Formspree. Posts in the background so the visitor stays
+   on the page. The status line only claims success if the POST succeeded. */
 (function(){
-  var form = document.getElementById('contact-form');
+  var form   = document.getElementById('contact-form');
   var status = document.getElementById('cf-status');
   if(!form) return;
+  var btn = form.querySelector('button[type=submit]');
+
+  function say(msg, kind){
+    status.textContent = msg;
+    status.classList.add('show');
+    status.classList.toggle('is-error', kind === 'error');
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var data = new FormData(form);
-    var name = data.get('name') || '';
-    var business = data.get('business') || '';
-    var email = data.get('email') || '';
-    var phone = data.get('phone') || '';
-    var trade = data.get('trade') || '';
-    var location = data.get('location') || '';
-    var message = data.get('message') || '';
+    var label = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    say('Sending your enquiry...');
 
-    var subject = 'Enquiry from ' + business + ' (' + name + ')';
-    var body =
-      'Name: ' + name + '\n' +
-      'Business: ' + business + '\n' +
-      'Email: ' + email + '\n' +
-      'Phone: ' + phone + '\n' +
-      'What they build: ' + trade + '\n' +
-      'Location: ' + location + '\n\n' +
-      'Message:\n' + message;
-
-    var mailto = 'mailto:sitereelmedia@gmail.com'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailto;
-    status.classList.add('show');
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if(res.ok){
+        form.reset();
+        say('Thanks — that came through. We\'ll be in touch, usually same day.');
+        btn.textContent = 'Sent';
+        return;
+      }
+      return res.json().then(function(d){
+        throw new Error((d.errors || []).map(function(x){ return x.message; }).join(', ') || 'Send failed');
+      });
+    }).catch(function(){
+      say('That didn\'t send. Email sitereelmedia@gmail.com or call 0455 222 083 and we\'ll pick it up.', 'error');
+      btn.disabled = false;
+      btn.textContent = label;
+    });
   });
 })();
 </script>
