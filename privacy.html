@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — SiteReel Media</title>
+<meta name="description" content="What SiteReel Media collects, why, where it goes, and how to get it deleted. Plain English.">
+<link rel="canonical" href="https://sitereelmedia.com.au/privacy.html">
+<meta name="theme-color" content="#0F0F11">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SiteReel Media">
+<meta property="og:url" content="https://sitereelmedia.com.au/privacy.html">
+<meta property="og:title" content="Privacy policy — SiteReel Media">
+<meta property="og:description" content="What SiteReel Media collects, why, where it goes, and how to get it deleted. Plain English.">
+<meta property="og:image" content="https://sitereelmedia.com.au/og.png">
+<meta property="og:locale" content="en_AU">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F0F11'/%3E%3ClinearGradient id='g' x1='0' y1='0' x2='.4' y2='1'%3E%3Cstop offset='0' stop-color='%234A90F0'/%3E%3Cstop offset='1' stop-color='%231C6FE0'/%3E%3C/linearGradient%3E%3Crect x='11' y='6' width='10' height='20' rx='3' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F0F11; --ink-2:#17181B; --ink-3:#1E2024; --line:#2A2C31;
+  --blue:#1C6FE0; --blue-dk:#1355B4; --blue-lt:#4A90F0; --sky:#8FC0FA;
+  --paper:#F4F6F8; --mute:#A8AFB8; --dim:#7D848D;
+
+  --display:"Instrument Sans", system-ui, sans-serif;
+  --body:"Inter", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, monospace;
+
+  --pad: clamp(20px, 5vw, 72px);
+  --maxw: 1280px;
+  --r: 26px;
+  --z-nav: 50; --z-skip: 100;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:110px; overflow-x:clip; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  margin:0; background:var(--ink); color:var(--paper);
+  font-family:var(--body); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--sky); outline-offset:3px; border-radius:4px; }
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:var(--pad); }
+
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:var(--z-skip);
+  background:#FFC53D; color:#231A00; font-family:var(--mono); font-size:13px;
+  padding:12px 18px; text-decoration:none; border-radius:0 0 8px 0;
+}
+.skip:focus{ left:0; }
+
+h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-.028em; line-height:1.04; margin:0; }
+h1{ font-size:clamp(34px, 6.6vw, 76px); }
+h2{ font-size:clamp(22px, 2.7vw, 31px); letter-spacing:-.02em; }
+h3{ font-size:clamp(18px, 1.9vw, 21px); font-weight:600; letter-spacing:-.012em; line-height:1.25; }
+p{ margin:0 0 1em; text-wrap:pretty; }
+
+.eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--sky); margin:0 0 20px;
+}
+
+/* ---------- nav (same shell as the home page) ---------- */
+.nav{ position:sticky; top:0; z-index:var(--z-nav); background:linear-gradient(180deg, var(--ink) 62%, rgba(15,15,17,0)); }
+.nav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; height:88px; }
+.brand{ display:inline-flex; align-items:baseline; gap:10px; text-decoration:none; }
+.brand b{
+  font-family:var(--display); font-weight:700; font-size:clamp(19px,2.4vw,24px);
+  letter-spacing:-.02em; text-transform:uppercase;
+}
+.brand small{ font-family:var(--mono); font-size:10px; line-height:1.25; color:var(--dim); letter-spacing:.04em; max-width:96px; }
+
+.pill{
+  display:inline-flex; align-items:center; gap:10px;
+  height:48px; padding:0 22px; border-radius:999px;
+  border:1px solid var(--line); background:transparent; color:var(--paper);
+  font-family:var(--body); font-size:15px; font-weight:500; text-decoration:none;
+  transition:background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.pill:hover{ background:var(--ink-3); border-color:#3A3D43; }
+.pill-solid{ background:var(--blue); border-color:var(--blue); color:#fff; }
+.pill-solid:hover{ background:var(--blue-dk); border-color:var(--blue-dk); }
+.pill .arw{ transition:transform .18s ease; }
+.pill:hover .arw{ transform:translateX(3px); }
+@media (prefers-reduced-motion: reduce){ .pill,.pill .arw{ transition:none; } }
+
+/* ---------- page head ---------- */
+/* padding-block, never the `padding` shorthand — the shorthand would wipe
+   .wrap's padding-inline and knock this out of line with everything else */
+.head{ padding-block:clamp(36px,6vw,76px) clamp(28px,4vw,44px); border-bottom:1px solid var(--line); }
+.head .lede{ font-size:clamp(17px,1.8vw,21px); color:var(--mute); max-width:60ch; margin-top:24px; }
+.updated{
+  font-family:var(--mono); font-size:13px; color:var(--dim);
+  letter-spacing:.04em; margin-top:22px;
+}
+
+/* ---------- the short version ---------- */
+.tldr{
+  margin:clamp(32px,5vw,52px) 0 0;
+  background:var(--ink-2); border:1px solid var(--line); border-radius:var(--r);
+  padding:clamp(24px,3.4vw,40px);
+}
+.tldr h2{ margin-bottom:18px; }
+.tldr ul{ margin:0; padding-left:1.15em; }
+.tldr li{ margin-bottom:.6em; color:var(--mute); }
+.tldr li b{ color:var(--paper); font-weight:600; }
+.tldr li:last-child{ margin-bottom:0; }
+
+/* ---------- body sections ---------- */
+.doc{ padding-block:clamp(40px,6vw,72px) clamp(56px,7vw,96px); }
+.sec{ padding-top:clamp(34px,4.4vw,54px); max-width:76ch; }
+.sec + .sec{ border-top:1px solid var(--line); }
+.sec h2{ margin-bottom:16px; }
+.sec h3{ margin:28px 0 10px; }
+.sec p, .sec li{ color:var(--mute); }
+.sec strong{ color:var(--paper); font-weight:600; }
+.sec ul{ padding-left:1.15em; margin:0 0 1em; }
+.sec li{ margin-bottom:.55em; }
+.sec a{ color:var(--sky); text-underline-offset:3px; }
+
+.num{
+  font-family:var(--mono); font-size:12px; letter-spacing:.18em;
+  color:var(--dim); display:block; margin-bottom:12px;
+}
+
+/* data table */
+.tbl-scroll{ overflow-x:auto; margin:0 0 1em; }
+table{ border-collapse:collapse; width:100%; min-width:520px; font-size:15.5px; }
+th,td{ text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:top; }
+th{
+  font-family:var(--mono); font-weight:500; font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--dim);
+}
+td{ color:var(--mute); }
+td:first-child{ color:var(--paper); font-weight:500; white-space:nowrap; }
+
+/* callout */
+.note{
+  border-left:3px solid var(--blue); background:var(--ink-2);
+  padding:18px 22px; border-radius:0 12px 12px 0; margin:22px 0;
+}
+.note p:last-child{ margin-bottom:0; }
+
+/* contact block */
+.contact-box{
+  margin-top:clamp(34px,4.4vw,54px);
+  background:var(--ink-2); border:1px solid var(--line); border-radius:var(--r);
+  padding:clamp(24px,3.4vw,40px);
+}
+.contact-box .rows{ display:flex; flex-direction:column; gap:6px; margin:18px 0 0; }
+.contact-box a{ color:var(--paper); font-size:19px; text-decoration:none; padding:5px 0; display:inline-block; }
+.contact-box a:hover{ color:var(--sky); }
+
+/* ---------- footer ---------- */
+footer{ border-top:1px solid var(--line); }
+.foot{ padding-block:clamp(34px,4vw,54px); }
+.foot-nav{ list-style:none; display:flex; flex-wrap:wrap; gap:10px 28px; padding:0; margin:0 0 34px; }
+.foot-nav a{
+  font-family:var(--display); font-weight:600; font-size:clamp(19px,2.4vw,27px);
+  letter-spacing:-.02em; text-transform:uppercase; text-decoration:none; color:var(--paper);
+}
+.foot-nav a:hover{ color:var(--blue-lt); }
+.foot-base{ display:flex; justify-content:space-between; align-items:end; gap:22px; flex-wrap:wrap; }
+.legal{ font-family:var(--mono); font-size:12.5px; line-height:1.7; color:var(--dim); margin:0; }
+.legal a{ color:var(--mute); }
+
+@media (max-width:640px){
+  .nav .wrap{ height:76px; }
+  .brand small{ display:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><b>SiteReel</b><small>Social content for trades</small></a>
+    <a class="pill pill-solid" href="/#contact">Book a shoot <span class="arw" aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="wrap head">
+    <p class="eyebrow">Privacy</p>
+    <h1>What we collect, and what we do with it.</h1>
+    <p class="lede">No tracking, no cookies, no advertising pixels, and nothing sold to anyone. This page says exactly what happens to your details when you fill in the form, and what happens to footage we shoot on your site.</p>
+    <p class="updated">Last updated 16/08/2026</p>
+  </div>
+
+  <div class="wrap">
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li><b>The website sets no cookies and runs no analytics.</b> Nothing tracks you across the internet, and we don't know you visited unless you contact us.</li>
+        <li><b>The only thing we collect is what you type into the contact form.</b> Nothing is gathered in the background.</li>
+        <li><b>We never sell or rent your details</b>, and we don't add you to a mailing list you didn't ask for.</li>
+        <li><b>Footage we shoot for a client belongs to a separate agreement</b>, and nothing featuring an identifiable person goes out without the client approving the post first.</li>
+        <li><b>Ask us to delete your details and we will</b>, usually the same day.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap doc">
+
+    <section class="sec">
+      <span class="num">01</span>
+      <h2>Who we are</h2>
+      <p>SiteReel Media is a sole trader business owned and operated by Carter Hammond, based in Queensland, Australia. We produce social media content for trade and home improvement businesses.</p>
+      <p><strong>ABN 11 952 386 605.</strong> Contact details are in section 09.</p>
+      <p>In this policy, "we" and "us" mean SiteReel Media, and "you" means anyone who contacts us through the website or appears in content we produce.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">02</span>
+      <h2>What the website collects</h2>
+      <p>The site has one form, at the bottom of the home page. It collects only what you type into it:</p>
+
+      <div class="tbl-scroll">
+      <table>
+        <caption class="visually-hidden" style="position:absolute;left:-9999px">Fields collected by the SiteReel Media contact form</caption>
+        <thead>
+          <tr><th scope="col">Field</th><th scope="col">Required</th><th scope="col">Why we ask</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Name</td><td>Yes</td><td>So we know who we're replying to.</td></tr>
+          <tr><td>Business name</td><td>Yes</td><td>To look at what you already have online before we reply.</td></tr>
+          <tr><td>Email</td><td>Yes</td><td>To reply to you.</td></tr>
+          <tr><td>Phone</td><td>No</td><td>Only used if you'd rather be called than emailed.</td></tr>
+          <tr><td>Trade</td><td>No</td><td>To understand what there'd be to film.</td></tr>
+          <tr><td>Location</td><td>Yes</td><td>To work out whether we can physically get to you.</td></tr>
+          <tr><td>Message</td><td>No</td><td>Whatever you'd like us to know.</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>What the website does not collect</h3>
+      <p>There are <strong>no cookies, no analytics, no advertising or social media pixels, and no session or local storage</strong> anywhere on this site. We do not build a profile of you, and we cannot see who visits.</p>
+      <p>Like every website, the servers that host these pages keep standard technical access logs, which can include IP addresses. Those logs are created and held by our hosting provider (see section 04), not by us — we don't read them, and we have no way to connect them to you.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">03</span>
+      <h2>Why we collect it, and what we do with it</h2>
+      <p>We use what you send us for one purpose: <strong>to reply to your enquiry and, if it goes somewhere, to quote and deliver the work.</strong></p>
+      <p>We do not use it for anything else. Specifically, we do not:</p>
+      <ul>
+        <li>sell, rent, or trade your details to anybody, ever;</li>
+        <li>add you to a newsletter or marketing list you didn't ask to join;</li>
+        <li>use your details to target advertising at you;</li>
+        <li>share your enquiry with other businesses as a "lead".</li>
+      </ul>
+      <p>If you become a client, we'll also hold the ordinary business records that come with that — invoices, payment records and the signed service agreement. Some of those we're required by law to keep (see section 06).</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">04</span>
+      <h2>Who else touches your information</h2>
+      <p>We use two outside services to run the website. Both are based in the United States, which means <strong>information you send through the form is stored overseas.</strong> We're telling you plainly because you should know before you type anything in.</p>
+
+      <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Service</th><th scope="col">What it does</th><th scope="col">Where</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Formspree</td><td>Receives the contact form and forwards it to our inbox</td><td>United States</td></tr>
+          <tr><td>GitHub Pages</td><td>Hosts these web pages</td><td>United States</td></tr>
+          <tr><td>Google (Gmail)</td><td>Our email inbox, where your enquiry lands and stays</td><td>United States</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Each of these has its own privacy policy governing what it does with data on its own systems. We've picked them because they're standard, not because they get any special access — none of them is permitted to use your enquiry for their own purposes.</p>
+      <p>Other than these, we don't disclose your information to anyone, except where the law requires it.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">05</span>
+      <h2>Filming, footage and people who appear in it</h2>
+      <p>This is the part most privacy policies skip, and it's the part that actually matters for a business like ours.</p>
+
+      <h3>On a client's site</h3>
+      <p>When we film at a workplace we will often capture <strong>images and voices of staff, subcontractors and sometimes members of the public.</strong> That's personal information too, so:</p>
+      <ul>
+        <li>We film only with the business owner's permission, and only in the areas they've agreed to.</li>
+        <li>We ask the client to tell their team we're coming and what it's for, before the shoot.</li>
+        <li>If someone doesn't want to be filmed, tell us on the day and we'll work around them. No explanation needed.</li>
+        <li><strong>Nothing is published without the client approving that specific post first.</strong> There is no auto-publishing.</li>
+        <li>If something ends up in a finished post and you want it taken down, tell us or tell the client, and we'll remove it.</li>
+      </ul>
+
+      <h3>Who owns the footage</h3>
+      <p>Ownership of footage, and what each side is allowed to do with it, is set out in the written service agreement with each client rather than in this policy. If you're a client and you want a copy of that agreement, ask.</p>
+
+      <h3>Raw footage</h3>
+      <p>Raw and edited footage is stored on our own equipment and backups. It isn't shared with anyone outside the work, and it isn't used to promote SiteReel Media without the client's specific permission.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">06</span>
+      <h2>How long we keep things</h2>
+      <ul>
+        <li><strong>Enquiries that go nowhere</strong> — kept for up to 12 months in case you come back, then deleted.</li>
+        <li><strong>Client records</strong> — kept for the length of the engagement.</li>
+        <li><strong>Invoices, payment and tax records</strong> — kept for <strong>five years</strong> after the transaction, because Australian tax law requires it.</li>
+        <li><strong>Footage</strong> — kept while you're a client and for 12 months after, so we can hand it over or re-cut it. After that it's deleted unless you've asked us to keep it.</li>
+      </ul>
+      <p>You can ask us to delete anything earlier than this, and we will, apart from the records we're legally required to hold on to.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">07</span>
+      <h2>Keeping it secure</h2>
+      <p>We take reasonable steps to protect what we hold: devices are password-protected and encrypted, accounts use multi-factor authentication where it's offered, and access is limited to Carter Hammond — there are no other staff.</p>
+      <p>We should be straight with you though: <strong>no method of transmitting or storing information is completely secure</strong>, and we can't guarantee absolute security. That's true of every business, and anyone who tells you otherwise is overselling.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">08</span>
+      <h2>Your choices</h2>
+      <p>At any time you can ask us to:</p>
+      <ul>
+        <li><strong>tell you what we hold</strong> about you;</li>
+        <li><strong>correct it</strong> if it's wrong;</li>
+        <li><strong>delete it</strong>, subject to the legal retention above;</li>
+        <li><strong>stop contacting you</strong> entirely.</li>
+      </ul>
+      <p>Email us and we'll action it, normally the same day and at most within 30 days. We won't charge you for it and we won't ask why.</p>
+
+      <div class="note">
+        <p><strong>Where this sits legally.</strong> The <em>Privacy Act 1988</em> (Cth) exempts most small businesses with an annual turnover under $3 million, and SiteReel Media is currently one of them. We follow the Australian Privacy Principles anyway, because it's how we'd want our own details handled — and if the business grows past that threshold, the Act will apply and this policy will be updated accordingly.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <span class="num">09</span>
+      <h2>Contact, questions and complaints</h2>
+      <p>Privacy questions, access requests and complaints all go to the same place, and they come to Carter directly:</p>
+
+      <div class="contact-box">
+        <p class="eyebrow" style="margin:0">SiteReel Media</p>
+        <div class="rows">
+          <a href="mailto:sitereelmedia@gmail.com">sitereelmedia@gmail.com</a>
+          <a href="tel:+61455222083">0455 222 083</a>
+        </div>
+        <p style="color:var(--mute); margin:20px 0 0">Carter Hammond, sole trader · ABN 11 952 386 605 · Queensland, Australia</p>
+      </div>
+
+      <p style="margin-top:26px">If you're unhappy with how we've handled something, say so — we'd rather hear it and fix it. We'll acknowledge a complaint within 5 business days and give you an answer within 30.</p>
+    </section>
+
+    <section class="sec">
+      <span class="num">10</span>
+      <h2>Changes to this policy</h2>
+      <p>If we change how we handle information, we'll update this page and change the date at the top. If a change is significant and you're a current client, we'll email you about it rather than quietly editing the page.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <ul class="foot-nav">
+      <li><a href="/#why">Why</a></li>
+      <li><a href="/#how">How it runs</a></li>
+      <li><a href="/#what">What you get</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact">Book a shoot</a></li>
+    </ul>
+    <div class="foot-base">
+      <span class="brand"><b>SiteReel</b></span>
+      <p class="legal">
+        SiteReel Media. Social content for trade businesses. Queensland.<br>
+        ABN 11 952 386 605 · <a href="mailto:sitereelmedia@gmail.com">sitereelmedia@gmail.com</a> · <a href="tel:+61455222083">0455 222 083</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
